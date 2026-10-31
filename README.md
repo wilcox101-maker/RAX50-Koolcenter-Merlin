@@ -84,11 +84,22 @@ The RAX50 has a hardware recovery mode. Use a wired connection and a static IP i
 
 **Tip:** Timing is the most common variable. If the first attempt fails, power-cycle and retry.
 
-### Return to stock from a working Merlin install
+### Return to stock (Merlin → OFW)
 
-1. Download an official Netgear RAX50 `.chk`.
-2. Upload it via **Administration → Firmware Upgrade**.
-3. After it boots into Netgear firmware, update to the latest stock version if desired.
+Koolcenter provides a dedicated file for returning to official Netgear firmware:
+
+- **File**: `RAX50-OFW-V1.0.0.18_2.0.13.w`
+- **Download**: [Merlin to OFW](https://fw.koolcenter.com/KoolCenter_Merlin_New_Gen_386/Netgear/RAX50/Merlin%20to%20OFW/)
+
+**Steps:**
+
+1. Download the `.w` file above.
+2. In the Merlin web UI go to **Administration → Firmware Upgrade**.
+3. Upload the `.w` file and flash.
+4. After reboot the router should be on stock Netgear firmware.
+5. You can then update to the latest official Netgear release if desired.
+
+This is the preferred method when Merlin is still bootable. Use the hardware recovery method above only if the web UI is inaccessible.
 
 ---
 
