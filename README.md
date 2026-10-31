@@ -32,7 +32,7 @@ Detailed steps for flashing **Koolcenter Merlin** on the **Netgear RAX50**.
 1. After reboot, the router’s IP changes to **`192.168.50.1`**.
 2. Open a browser and go to `http://192.168.50.1` (or `http://router.asus.com`).
 3. Complete the setup wizard (set Wi-Fi name, password, admin password, etc.).
-4. You should now see the Merlin interface with the **“Powered by koolshare”** banner and the 八万 logo.
+4. You should now see the Merlin interface with the **“Powered by koolshare”** banner and the 八万 logo (Koolcenter branding).
 
 ## Step 3: Required post-flash setup (important)
 
@@ -57,10 +57,41 @@ Detailed steps for flashing **Koolcenter Merlin** on the **Netgear RAX50**.
 
 Once you are on Merlin, future updates use the **`.w`** file (not `.chk`) under **Administration → Firmware Upgrade**.
 
-## Recovery notes
+## Recovery
 
-- If something goes wrong, the RAX50 has a recovery mode. You can usually recover with Netgear’s recovery tool or by holding the reset button while powering on and using TFTP/`nmrpflash`.
-- You can return to stock Netgear firmware later by flashing an older Netgear `.chk` first, then letting it auto-upgrade.
+The RAX50 has a hardware recovery mode that can restore it even after a bad flash. Use a **wired** connection and a static IP on your computer in the `192.168.1.x` range (e.g. `192.168.1.10`).
+
+### Method 1: Netgear recovery tool / nmrpflash (recommended)
+
+1. Download Netgear’s recovery tool or `nmrpflash` (community tool that works with many Netgear models).
+2. Unplug the router’s power.
+3. Hold the **Reset** button (paperclip) and plug the power back in.
+4. Keep holding Reset until the power LED starts blinking (usually 10–20 seconds). Release.
+5. The router should now be in recovery mode (often reachable at `192.168.1.1`).
+6. Run the recovery tool or `nmrpflash` and point it at a stock Netgear `.chk` firmware file.
+7. Wait for the flash to complete and the router to reboot.
+
+**Timing tip:** Some users report better success if they start the recovery tool/nmrpflash *just before* or *immediately after* releasing the Reset button. If the first attempt fails, power-cycle and try again.
+
+### Method 2: TFTP (if nmrpflash is unavailable)
+
+1. Put the router into recovery mode (same Reset + power-on sequence above).
+2. Set your computer to a static IP in `192.168.1.x`.
+3. Use a TFTP client to push a stock `.chk` file to `192.168.1.1`.
+4. Wait for the transfer to finish and the router to reboot.
+
+### Returning to stock from a working Merlin install
+
+1. Download an older official Netgear RAX50 `.chk` firmware.
+2. In the Merlin web UI go to **Administration → Firmware Upgrade** and upload the Netgear `.chk`.
+3. After it boots into Netgear firmware, you can let it auto-update to the latest stock version or manually flash the newest Netgear firmware.
+
+### If recovery fails
+
+- Try a different LAN port.
+- Disable any firewall/antivirus that might block TFTP or the recovery tool.
+- Use a different computer or network adapter.
+- Repeat the Reset + power-on sequence; timing is the most common variable.
 
 ## Disclaimer
 
