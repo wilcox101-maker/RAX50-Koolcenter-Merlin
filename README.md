@@ -11,6 +11,7 @@ Practical guide for running **Koolcenter Merlin** on the **Netgear RAX50**.
 | [Flashing Guide](#flashing-guide) | Step-by-step install and recovery |
 | [Merlin vs Netgear](Merlin-vs-Netgear.md) | What you gain and lose |
 | [Firmware Analysis](ANALYSIS.md) | Extraction notes and static review |
+| [Customization](Customization.md) | Soft Center, JFFS scripts, Entware, and built-in options |
 | [Soft Center Addons](Soft-Center-Addons.md) | Useful plugins with setup steps |
 | [Optimization Notes](Optimization-Notes.md) | Wi-Fi, update domains, English menu map |
 | [Scripts](scripts/) | Post-flash check and memory alert |
@@ -96,6 +97,7 @@ The RAX50 has a hardware recovery mode. Use a wired connection and a static IP i
 1. Install the **Swap** plugin (512 MB RAM is tight).
 2. Set Wi-Fi: 2.4 GHz on channel 1/6/11 at 20 MHz; 5 GHz on a non-DFS channel at 80 MHz. See [Optimization Notes](Optimization-Notes.md).
 3. Only install plugins that appear in the Software Center (rogsoft / axhnd.675x).
+4. Explore further options in the [Customization guide](Customization.md).
 
 ---
 
